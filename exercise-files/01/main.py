@@ -1,13 +1,13 @@
 from dotenv import load_dotenv
-from langchain_openai import OpenAI
+from langchain_openai import ChatOpenAI
 from colorama import Fore
 
 load_dotenv()
-llm = OpenAI()
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 def generate(text):
     """ generate text based on the input """
-    return llm.invoke(text)
+    return llm.invoke(text).content
 
 
 def start():
