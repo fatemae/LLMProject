@@ -1,7 +1,6 @@
 from langchain.chains import create_retrieval_chain, create_history_aware_retriever
 from langchain_community.document_loaders import TextLoader
-from langchain_community.chat_models import ChatOpenAI
-from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_text_splitters import CharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import Chroma
@@ -48,7 +47,7 @@ qa_prompt = ChatPromptTemplate.from_messages(
 )
 
 # indexing
-documents = TextLoader("./docs/faq.txt").load()
+documents = TextLoader("./exercise-files/04-streamlit/docs/faq.txt").load()
 text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0, separator="\n")
 splits = text_splitter.split_documents(documents)
 db = Chroma.from_documents(documents, OpenAIEmbeddings())
