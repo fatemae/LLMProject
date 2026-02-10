@@ -1,0 +1,15 @@
+bs4==0.0.2
+chromadb==0.4.17
+langchain
+langchain_openai
+openai
+python-dotenv==1.0.0
+colorama==0.4.6
+langchain-core
+langchainhub==0.1.14
+langsmith
+tiktoken==0.6.0
+pydantic
+pymongo
+pypdf==4.2.0
+tavily-python==0.3.3
